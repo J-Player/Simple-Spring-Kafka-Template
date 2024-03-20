@@ -12,9 +12,9 @@ public class KafkaController {
     @Autowired
     private Producer producer;
 
-    @GetMapping("/{message}")
-    public ResponseEntity<String> greeting(@PathVariable("message") String message) {
-        producer.sendMessage("Hello %s!".formatted(message));
+    @GetMapping("/greeting/{name}")
+    public ResponseEntity<String> greeting(@PathVariable("name") String name) {
+        producer.sendMessage("Hello %s!".formatted(name));
         return ResponseEntity.ok("Message sent!");
     }
 

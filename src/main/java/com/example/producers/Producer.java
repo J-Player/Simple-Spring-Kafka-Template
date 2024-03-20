@@ -12,7 +12,7 @@ public class Producer {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message) {
-        kafkaTemplate.send(KafkaConstraints.KAFKA_TOPIC_NAME, message);
+        kafkaTemplate.send(KafkaConstraints.TOPIC_NAME, message);
     }
 
 }
